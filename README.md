@@ -2,6 +2,7 @@ titanic_pacani
 ==============================
 
 ```
+
 .venv\Scripts\activate            # активация виртуального окружения
 python setup.py install           # установка внутренних библиотек
 pip install -r requirements.txt   # установка внешних библиотек
