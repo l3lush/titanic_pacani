@@ -2,10 +2,13 @@ titanic_pacani
 ==============================
 
 ```
-
-.venv\Scripts\activate            # активация виртуального окружения
+git clone https://github.com/l3lush/titanic_pacani.git
+cd titanic_pacani/
+python -m venv .venv
+source .venv/Scripts/activate     # активация виртуального окружения
 python setup.py install           # установка внутренних библиотек
 pip install -r requirements.txt   # установка внешних библиотек
+python src/data/download_data.py params.yaml
 ```
 
 Zalupa dlya rebyat
