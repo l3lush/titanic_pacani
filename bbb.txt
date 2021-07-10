@@ -1,0 +1,8 @@
+stages:
+  data_download:
+    cmd: python src\data\download_data.py params.yaml
+    deps:
+    - src\data\download_data.py
+    params:
+    - input_url_data
+    - output_raw_data

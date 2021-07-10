@@ -1,5 +1,13 @@
 input_url_data: "https://gist.githubusercontent.com/michhar/2dfd2de0d4f8727f873422c5d959fff5/raw/fa71405126017e6a37bea592440b4bee94bf7b9e/titanic.csv"
-output_raw_data: "data/raw/titanic_raw_data.csv"
+output_raw_data: "data/raw/titanic_downloaded_data.csv"
+splitting_params:
+  random_state: 17
+  test_size: 0.3
+  stratify: false
+  X_train_path: 'data/raw/X_train.csv'
+  X_test_path: 'data/raw/X_test.csv'
+  y_train_path: 'data/raw/y_train.csv'
+  y_test_path: 'data/raw/y_test.csv'
 feature_params:
   categorical_features:
     - "Pclass"
