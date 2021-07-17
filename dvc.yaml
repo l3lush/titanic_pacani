@@ -5,4 +5,13 @@ stages:
     - src\data\download_data.py
     params:
     - input_url_data
-    - output_raw_datas
+    - output_raw_data
+  split_data:
+    cmd: python src\data\split_data.py params.yaml
+    deps:
+    - src\data\split_data.py
+    params:
+    - feature_params.features_to_drop
+    - feature_params.target
+    - output_raw_data
+    - splitting_params

@@ -12,3 +12,36 @@ stages:
         output_raw_data: data/raw/titanic_downloaded_data.csv
   ddd:
     cmd: python src\data\download_data.py params.yaml
+  download_data:
+    cmd: python src\data\download_data.py params.yaml
+    deps:
+    - path: src\data\download_data.py
+      md5: 39ff70f32acbf0059b1dcf547a58842a
+      size: 921
+    params:
+      params.yaml:
+        input_url_data: https://gist.githubusercontent.com/michhar/2dfd2de0d4f8727f873422c5d959fff5/raw/fa71405126017e6a37bea592440b4bee94bf7b9e/titanic.csv
+        output_raw_data: data/raw/titanic_downloaded_data.csv
+  split_data:
+    cmd: python src\data\split_data.py params.yaml
+    deps:
+    - path: src\data\split_data.py
+      md5: 29f51ba5e2369865cc1f18d04e25fcd5
+      size: 1611
+    params:
+      params.yaml:
+        feature_params.features_to_drop:
+        - PassengerId
+        - Name
+        - Ticket
+        - Cabin
+        feature_params.target: Survived
+        output_raw_data: data/raw/titanic_downloaded_data.csv
+        splitting_params:
+          random_state: 17
+          test_size: 0.3
+          stratify: false
+          X_train_path: data/raw/X_train.csv
+          X_test_path: data/raw/X_test.csv
+          y_train_path: data/raw/y_train.csv
+          y_test_path: data/raw/y_test.csv

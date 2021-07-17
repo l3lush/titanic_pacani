@@ -6,6 +6,3 @@ stages:
     params:
     - input_url_data
     - output_raw_data
-
-dvc run -f -n split_data -p output_raw_data,feature_params.target,feature_params.features_to_drop,feature_params.target,splitting_params -d src\
-data\split_data.py python src\data\split_data.py params.yaml
