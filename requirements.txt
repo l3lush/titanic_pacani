@@ -4,3 +4,4 @@ click
 sklearn
 marshmallow-dataclass
 pyyaml
+dvc
