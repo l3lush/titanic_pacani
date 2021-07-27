@@ -43,13 +43,13 @@ stages:
           stratify: false
           X_train_path: data/raw/X_train.csv
           X_test_path: data/raw/X_test.csv
-          y_train_path: data/raw/y_train.csv
-          y_test_path: data/raw/y_test.csv
+          y_train_path: data/processed/y_train.csv
+          y_test_path: data/processed/y_test.csv
   make_dataset:
     cmd: python src\data\make_dataset.py params.yaml
     deps:
     - path: src\data\make_dataset.py
-      md5: 37294563ba6752f292c790b920816919
+      md5: 4ddd929b603bf74f050fe92201fcaca8
       size: 1373
     params:
       params.yaml:

@@ -1,5 +1,6 @@
 input_url_data: "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
 output_raw_data: "data/raw/titanic_downloaded_data.csv"
+
 splitting_params:
   random_state: 17
   test_size: 0.3
@@ -8,10 +9,25 @@ splitting_params:
   X_test_path: 'data/raw/X_test.csv'
   y_train_path: 'data/processed/y_train.csv'
   y_test_path: 'data/processed/y_test.csv'
+
 feature_transforming:
   X_train_transformed_path: "data/processed/X_train_transformed.csv"
   X_test_transformed_path: "data/processed/X_test_transformed.csv"
   transformer_path: "models/transformer.pkl"
+
+train_params:
+  random_state: 17
+  estimator_type: "DecisionTreeClassifier"
+  model_path: "models/dec_tree.pkl"
+  penalty: 'l2'
+  C: 1.0
+  solver: "lbfgs"
+  n_jobs: -1
+  max_iter: 1000
+  max_depth: 7
+  min_samples_split: 0.05
+  min_samples_leaf: 0.05
+
 feature_params:
   categorical_features:
     - "Pclass"
