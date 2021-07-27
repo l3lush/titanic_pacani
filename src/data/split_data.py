@@ -1,17 +1,16 @@
 import click
-import logging
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from src.enities.train_pipeline_params import read_training_pipeline_params
+from src.utils import make_logger
 
 
 @click.command()
 @click.argument("config_path")
 def main(config_path):
     """Split data to train and test"""
-    logger = logging.getLogger("split data")
     config = read_training_pipeline_params(config_path)
     data = pd.read_csv(config.output_raw_data)
 
@@ -39,6 +38,5 @@ def main(config_path):
 
 
 if __name__ == "__main__":
-    log_fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
+    logger = make_logger(__file__)
     main()

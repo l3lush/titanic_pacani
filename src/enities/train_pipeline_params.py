@@ -4,6 +4,7 @@ import yaml
 
 from src.enities.feature_params import FeatureParams
 from src.enities.splitting_params import SplittingParams
+from src.enities.feature_transforming import FeatureTransformingParams
 
 
 @dataclass()
@@ -12,6 +13,7 @@ class TrainingPipelineParams:
     output_raw_data: str
     splitting_params: SplittingParams
     feature_params: FeatureParams
+    feature_transforming: FeatureTransformingParams
 
 
 TrainingPipelineParamsSchema = class_schema(TrainingPipelineParams)

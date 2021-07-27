@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import click
-import logging
 
 import pandas as pd
 
 from src.enities.train_pipeline_params import read_training_pipeline_params
+from src.utils import make_logger
 
 
 @click.command()
@@ -13,9 +13,6 @@ def main(config_path):
     """
     Get config file and download data
     """
-    logger = logging.getLogger("download data")
-    logger.info("download data")
-
     config = read_training_pipeline_params(config_path)
     logger.info(f"got config from path {config_path}")
 
@@ -27,6 +24,5 @@ def main(config_path):
 
 
 if __name__ == "__main__":
-    log_fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
+    logger = make_logger(__file__)
     main()

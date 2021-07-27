@@ -15,3 +15,11 @@ stages:
     - feature_params.target
     - output_raw_data
     - splitting_params
+  make_dataset:
+    cmd: python src\data\make_dataset.py params.yaml
+    deps:
+    - src\data\make_dataset.py
+    params:
+    - splitting_params.X_train_path
+    - splitting_params.X_test_path
+    - feature_transforming
