@@ -7,6 +7,7 @@ from src.enities.splitting_params import SplittingParams
 from src.enities.feature_transforming import FeatureTransformingParams
 from src.enities.train_params import TrainParams
 
+
 @dataclass()
 class TrainingPipelineParams:
     input_url_data: str
