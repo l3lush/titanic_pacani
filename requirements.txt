@@ -5,3 +5,4 @@ sklearn
 marshmallow-dataclass
 pyyaml
 dvc
+typeguard
